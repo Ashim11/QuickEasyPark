@@ -36,10 +36,6 @@ echo '<style>';
 
 echo 'body{background-image: url("./images/car_new/back2.jpg");}';
 
-#echo 'body{background:#31708f;}';
-#echo 'body{background:#000;}'; // DARK
-#echo 'body{background:#fff;}'; // LIGHT
-
 
 #END STYLE
 echo '</style>';
@@ -167,4 +163,55 @@ jQuery(function() {
 			</div>
 		</div>
 	</div>
+	
+	<!-- SMS API-->
+	<?php
+	
+	if (isset($_POST["submit"])){
+		
+		
+		
+	}
+	
+	// Authorisation details.
+	$username = "ashimgurung433@gmail.com";
+	$hash = "c64f1b033b09972a430b02df475e1b5399b78c28f570a422a3f7afa8499405c9";
+
+	// Config variables. Consult http://api.txtlocal.com/docs for more info.
+	$test = "0";
+
+	// Data for text message. This is the text message data.
+	$sender = "QuickEasyPark"; // This is who the message appears to be from.
+	$numbers = $_POST["parking_phonenumber"] // A single number or a comma-seperated list of numbers
+	$message = $_POST[""]
+	// 612 chars or less
+	// A single number or a comma-seperated list of numbers
+	$message = urlencode($message);
+	$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+	$ch = curl_init('http://api.txtlocal.com/send/?');
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$result = curl_exec($ch); // This is the result from the API
+	curl_close($ch);
+	
+	if(!$result){
+		?>
+		<script>alert('message not sent')</script>
+	<?php	
+	}
+	else{
+		#print the result 
+		echo $result;
+		?>
+		<script>alert('')</script>
+		<?php
+	}
+	
+	}
+	
+	
+?>
+
+
 <?php include_once("includes/footer.php"); ?> 

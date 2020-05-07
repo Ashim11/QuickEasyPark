@@ -14,10 +14,6 @@ echo '<style>';
 
 echo 'body{background-image: url("./images/car_new/back2.jpg");}';
 
-#echo 'body{background:#31708f;}';
-#echo 'body{background:#000;}'; // DARK
-#echo 'body{background:#fff;}'; // LIGHT
-
 
 #END STYLE
 echo '</style>';
