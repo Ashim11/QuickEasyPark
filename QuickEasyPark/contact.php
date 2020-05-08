@@ -75,7 +75,7 @@ echo '</style>';
 					D01<br />
 					<br /><br />
 					+35 (0)1234 444789<br />
-					<a href="">info@EasyQuickpark.ie</a><br />
+					<a href="">info@QuickEasypark.ie</a><br />
 				</p>
 			</div>
 		</div>

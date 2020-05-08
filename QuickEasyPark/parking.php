@@ -164,14 +164,20 @@ jQuery(function() {
 		</div>
 	</div>
 	
-	<!-- SMS API-->
+	
+
+
+<?php include_once("includes/footer.php"); ?> 
+
+
+<!-- SMS API-->
 	<?php
 	
-	if (isset($_POST["submit"])){
+	if (isset($_POST["Submit"])){
 		
 		
 		
-	}
+	
 	
 	// Authorisation details.
 	$username = "ashimgurung433@gmail.com";
@@ -182,9 +188,9 @@ jQuery(function() {
 
 	// Data for text message. This is the text message data.
 	$sender = "QuickEasyPark"; // This is who the message appears to be from.
-	$numbers = $_POST["parking_phonenumber"] // A single number or a comma-seperated list of numbers
-	$message = $_POST[""]
-	// 612 chars or less
+	$numbers = $_POST["parking_phonenumber"] ; // A single number or a comma-seperated list of numbers
+	$message = $_POST["parking_entry_date"].$_POST["parking_intime"].$_POST["parking_exit_date"].$_POST["parking_outtime"].$_POST["parking_charges"] ;  
+	
 	// A single number or a comma-seperated list of numbers
 	$message = urlencode($message);
 	$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
@@ -197,14 +203,14 @@ jQuery(function() {
 	
 	if(!$result){
 		?>
-		<script>alert('message not sent')</script>
+		<script>alert('')</script>
 	<?php	
 	}
 	else{
 		#print the result 
 		echo $result;
 		?>
-		<script>alert('')</script>
+		<script>alert('successfully booked')</script>
 		<?php
 	}
 	
@@ -212,6 +218,3 @@ jQuery(function() {
 	
 	
 ?>
-
-
-<?php include_once("includes/footer.php"); ?> 
