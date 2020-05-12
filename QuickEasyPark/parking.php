@@ -41,7 +41,7 @@ echo 'body{background-image: url("./images/car_new/back2.jpg");}';
 echo '</style>';
 ?>
 
-
+<!-- jquery calender date picker-->
 <script>
 
 jQuery(function() {
@@ -59,6 +59,78 @@ jQuery(function() {
 	});
 });
 </script> 
+
+<script 
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+  type="text/javascript" charset="utf-8"></script>
+
+
+
+<script>
+
+$(document).ready(function(){
+  $(".selection).click(function(){  
+var myID = $(this).attr('id');
+alert("you clicked the selection: " + myID);
+var datasend = "myID="+ myID;
+
+        $.ajax({
+
+            type:'POST',
+            url:'post.php',
+            data:datasend,
+                        crossDomain: true,
+            cache:false,
+            success:function(msg){
+            alert(msg); 
+
+                $('#message').fadeIn('slow').prepend(msg);
+
+            }
+
+
+        });
+
+</script>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+		
+		$(document).ready(function(){
+			
+			$('#Submit').click(function(){
+					/*alert('successfully booked')*/
+					var parking_slot_number = $('#parking_slot_number').val();
+					var parking_car_no = $('#parking_car_no').val();
+					var parking_entry_date = $('#parking_entry_date').val();
+					var parking_intime = $('#parking_intime').val();
+					var parking_exit_date = $('#parking_exit_date').val();
+					var parking_outtime = $('#parking_outtime').val();
+					var parking_charges = $('#parking_charges').val();
+					var parking_email = $('#parking_email').val();
+					
+					var data = 'slot_no='+ parking_slot_number + 'car_no=' + parking_car_no +'entrydate=' + parking_entry_date  + 'intime=' + parking_intime + 'exitdate='+ parking_exit_date   +'outtime='+ parking_outtime   +'parking_charges=' + parking_charges + '&email=' + parking_email;
+					console.log(data);
+					
+					$.ajax({
+						type: "POST",
+						url: 'mail.php'
+						data: varData,
+						success: function(){
+							alert("successfully booked");
+						}
+						
+						
+					});
+				
+				
+			});
+			
+		});
+
+</script>
+
 	<div class="crumb">
     </div>
     <div class="clear"></div>
@@ -80,11 +152,11 @@ jQuery(function() {
 					</ul>
 					<ul class="forms">
 						<li class="txt">Slot No</li>
-						<li class="inputfield"><input name="parking_slot_number" type="text" class="bar" required value="<?=$data[parking_slot_number]?>"/></li>
+						<li class="inputfield"><input name="parking_slot_number" id="parking_slot_number" type="text" class="bar" required value="<?=$data[parking_slot_number]?>"/></li>
 					</ul>
 					<ul class="forms">
 						<li class="txt">Car No</li>
-						<li class="inputfield"><input name="parking_car_no" type="text" class="bar" required value="<?=$data[parking_car_no]?>"/></li>
+						<li class="inputfield"><input name="parking_car_no" id="parking_car_no" type="text" class="bar" required value="<?=$data[parking_car_no]?>"/></li>
 					</ul>
 					<ul class="forms">
 						<li class="txt">Entry Date</li>
@@ -92,7 +164,7 @@ jQuery(function() {
 					</ul>
 					<ul class="forms">
 						<li class="txt">Entry Time</li>
-						<li class="inputfield"><input name="parking_intime" type="text" class="bar" required value="<?=$data[parking_intime]?>"/></li>
+						<li class="inputfield"><input name="parking_intime" id="parking_intime" type="text" class="bar" required value="<?=$data[parking_intime]?>"/></li>
 					</ul>
 					<ul class="forms">
 						<li class="txt">Exit Date</li>
@@ -100,7 +172,7 @@ jQuery(function() {
 					</ul>
 					<ul class="forms">
 						<li class="txt">Exit Time</li>
-						<li class="inputfield"><input name="parking_outtime" type="text" class="bar" value="<?=$data[parking_outtime]?>"/></li>
+						<li class="inputfield"><input name="parking_outtime" id="parking_outtime" type="text" class="bar" value="<?=$data[parking_outtime]?>"/></li>
 					</ul>
 					
 					<!--
@@ -111,20 +183,20 @@ jQuery(function() {
 					-->
 					<ul class="forms">
 						<li class="txt">Email</li>
-						<li class="inputfield"><input name="parking_email" type="text" class="bar" value="<?php $parking_email?>"/></li>
+						<li class="inputfield"><input name="parking_email" id="parking_email" type="text" class="bar" value="<?php $parking_email?>"/></li>
 					</ul>
 					
 					
 					<ul class="forms">
 						<li class="txt">Phone Number</li>
-						<li class="inputfield"><input name="parking_phonenumber" type="text" class="bar" value="<?=$data[parking_phonenumber]?>"/></li>
+						<li class="inputfield"><input name="parking_phonenumber" id="parking_email" type="text" class="bar" value="<?=$data[parking_phonenumber]?>"/></li>
 					</ul>
 					
 					
 					
 					<ul class="forms">
 						<li class="txt">Parking Charges</li>
-						<li class="inputfield"><input name="parking_charges" type="text" class="bar" value="<?=$data[parking_charges]?>"/></li>
+						<li class="inputfield"><input name="parking_charges" id="parking_charges" type="text" class="bar" value="<?=$data[parking_charges]?>"/></li>
 					</ul>
 					
 					<?php
@@ -169,52 +241,17 @@ jQuery(function() {
 
 <?php include_once("includes/footer.php"); ?> 
 
+ <?php
+      $mailTo = "admin@google.com";
+      $mailFrom = "no-reply@admin.com";
+     // $subject = $_POST['subject'];
+	$subject = 'my subject head';
+      $message = "your booking is made.";
 
-<!-- SMS API-->
-	<?php
-	
-	if (isset($_POST["Submit"])){
-		
-		
-		
-	
-	
-	// Authorisation details.
-	$username = "ashimgurung433@gmail.com";
-	$hash = "c64f1b033b09972a430b02df475e1b5399b78c28f570a422a3f7afa8499405c9";
+      mail($mailTo, $subject, $message, "From: ".$mailFrom);
 
-	// Config variables. Consult http://api.txtlocal.com/docs for more info.
-	$test = "0";
+     echo "Email successfully sent";
+  ?>
 
-	// Data for text message. This is the text message data.
-	$sender = "QuickEasyPark"; // This is who the message appears to be from.
-	$numbers = $_POST["parking_phonenumber"] ; // A single number or a comma-seperated list of numbers
-	$message = $_POST["parking_entry_date"].$_POST["parking_intime"].$_POST["parking_exit_date"].$_POST["parking_outtime"].$_POST["parking_charges"] ;  
-	
-	// A single number or a comma-seperated list of numbers
-	$message = urlencode($message);
-	$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-	$ch = curl_init('http://api.txtlocal.com/send/?');
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$result = curl_exec($ch); // This is the result from the API
-	curl_close($ch);
-	
-	if(!$result){
-		?>
-		<script>alert('')</script>
-	<?php	
-	}
-	else{
-		#print the result 
-		echo $result;
-		?>
-		<script>alert('successfully booked')</script>
-		<?php
-	}
-	
-	}
-	
-	
-?>
+
+
