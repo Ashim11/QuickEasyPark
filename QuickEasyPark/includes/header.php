@@ -55,6 +55,10 @@ echo '</style>';
 <script type="text/javascript" src="./js/jquery.validate.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script>
 
+
+
+
+
 <style>
 
 .ddsmoothmenu {
@@ -69,8 +73,8 @@ echo '</style>';
 
 <body>
 <div id="wrapper_sec">
-	<div id="masthead">
-    	<div class="logo">
+	<div id="masthead" style="background-color:#659DBD">
+    	<div class="logo" >
         	<a href="./index.php" class="logo-custom">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; EasyQuickPark</a>
         </div>
         <div class="slogan"></div>

@@ -60,4 +60,6 @@ function delete_parking()
 	mysql_query($SQL) or die(mysql_error());
 	header("Location:../parking-report.php?msg=Deleted Successfully.");
 }
+
+
 ?>

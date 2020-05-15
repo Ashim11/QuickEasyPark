@@ -10,6 +10,8 @@ $parking_charges = $_POST['parking_charges'];
 
 $parking_email = $_POST['parking_email'];
 
-mail($email, $name, 'your spot booked successfully');
+mail( $parking_email, $parking_slot_number, $parking_car_no, $parking_entry_date,
+parking_intime ,parking_exit_date,parking_outtime, parking_charges,
+ 'your spot booked successfully');
 
 ?>

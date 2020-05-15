@@ -60,11 +60,11 @@ jQuery(function() {
 });
 </script> 
 
+
+<!--
 <script 
-  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
   type="text/javascript" charset="utf-8"></script>
-
-
 
 <script>
 
@@ -94,10 +94,12 @@ var datasend = "myID="+ myID;
 </script>
 
 
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 		
-		$(document).ready(function(){
+		$(document).ready(function(mailTo){
 			
 			$('#Submit').click(function(){
 					/*alert('successfully booked')*/
@@ -110,11 +112,16 @@ var datasend = "myID="+ myID;
 					var parking_charges = $('#parking_charges').val();
 					var parking_email = $('#parking_email').val();
 					
-					var data = 'slot_no='+ parking_slot_number + 'car_no=' + parking_car_no +'entrydate=' + parking_entry_date  + 'intime=' + parking_intime + 'exitdate='+ parking_exit_date   +'outtime='+ parking_outtime   +'parking_charges=' + parking_charges + '&email=' + parking_email;
-					console.log(data);
+					/* format in which php can read this data*/
+					var data = 'parking_slot_number='+ parking_slot_number + 'parking_car_no=' + parking_car_no +
+					'parking_entry_date='+ parking_entry_date  + 'parking_intime=' + parking_intime + 'parking_exit_date='+ parking_exit_date  
+						+'parking_outtime='+ parking_outtime   +'parking_charges=' + parking_charges + 'parking_email=' + parking_email;
+						
+					console.log(data); //check if it works properly
 					
-					$.ajax({
-						type: "POST",
+					/*ajax function that passes info to php page*/
+					$.ajax({ 
+						type: 'POST',
 						url: 'mail.php'
 						data: varData,
 						success: function(){
@@ -129,7 +136,10 @@ var datasend = "myID="+ myID;
 			
 		});
 
-</script>
+</script>    
+
+-->
+
 
 	<div class="crumb">
     </div>
@@ -225,7 +235,7 @@ var datasend = "myID="+ myID;
 					<div class="clear"></div>
 					<ul class="forms">
 						<li class="txt">&nbsp;</li>
-						<li class="textfield"><input type="submit" value="Submit" class="simplebtn"></li>
+						<li class="textfield"><input type="submit" id="Submit" value="Submit" class="simplebtn"></li>
 						<li class="textfield"><input type="reset" value="Reset" class="resetbtn"></li>
 					</ul>
 					<input type="hidden" name="act" value="save_parking">
@@ -241,17 +251,6 @@ var datasend = "myID="+ myID;
 
 <?php include_once("includes/footer.php"); ?> 
 
- <?php
-      $mailTo = "admin@google.com";
-      $mailFrom = "no-reply@admin.com";
-     // $subject = $_POST['subject'];
-	$subject = 'my subject head';
-      $message = "your booking is made.";
-
-      mail($mailTo, $subject, $message, "From: ".$mailFrom);
-
-     echo "Email successfully sent";
-  ?>
 
 
 
