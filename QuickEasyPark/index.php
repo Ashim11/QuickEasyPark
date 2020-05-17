@@ -32,7 +32,7 @@ echo '</style>';
             <ul>
 			   <li><a href="#"><img src="./images/car_new/banner1.jpg" alt="" /></a></li>
                <li><a href="#"><img src="./images/car_new/banner2.jpg" alt="" /></a></li>
-               <li><a href="#"><img src="./images/car_new/banner3.jpg" alt="" /></a></li>
+               <li><a href="#"><img src="./images/car_new/banner4.jpg" alt="" /></a></li>
             </ul>        
           </div>
           

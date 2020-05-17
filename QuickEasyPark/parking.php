@@ -26,6 +26,8 @@
 			exit;
 		}
 	}
+	
+	
 ?>
 
 <?php
@@ -235,7 +237,7 @@ var datasend = "myID="+ myID;
 					<div class="clear"></div>
 					<ul class="forms">
 						<li class="txt">&nbsp;</li>
-						<li class="textfield"><input type="submit" id="Submit" value="Submit" class="simplebtn"></li>
+						<li class="textfield"><input type="submit" id="Submit" value="Submit" class="simplebtn" ></li>
 						<li class="textfield"><input type="reset" value="Reset" class="resetbtn"></li>
 					</ul>
 					<input type="hidden" name="act" value="save_parking">

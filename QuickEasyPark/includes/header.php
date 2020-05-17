@@ -46,8 +46,8 @@ echo '</style>';
 <script type="text/javascript" src="./js/contentslider.js"></script>
 <script type="text/javascript" src="./js/ddaccordion.js"></script>
 <script type="text/javascript" src="./js/acrodin.js"></script>
-<script type="text/javascript" src="./js/jquery.fancybox-1.3.1.js"></script>
-<script type="text/javascript" src="./js/lightbox.js"></script>
+ <!--<script type="text/javascript" src="./js/jquery.fancybox-1.3.1.js"></script>
+<script type="text/javascript" src="./js/lightbox.js"></script> -->
 <script type="text/javascript" src="./js/menu-collapsed.js"></script>
 <script type="text/javascript" src="./js/cufon-yui.js"></script>
 <script type="text/javascript" src="./js/trebuchet_ms_400-trebuchet_ms_700-trebuchet_ms_italic_700-trebuchet_ms_italic_400.font.js"></script>

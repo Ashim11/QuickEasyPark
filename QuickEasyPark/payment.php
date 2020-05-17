@@ -15,7 +15,25 @@ echo 'body{background-image: url("./images/car_new/back2.jpg");}';
 #END STYLE
 echo '</style>';
 
+?>
 
+
+<link rel="alternate" type="application/json+oembed" href="https://www.jotform.com/oembed/?format=json&amp;url=https%3A%2F%2Fform.jotform.com%2F201355809508356" title="oEmbed Form">
+<link rel="alternate" type="text/xml+oembed" href="https://www.jotform.com/oembed/?format=xml&amp;url=https%3A%2F%2Fform.jotform.com%2F201355809508356" title="oEmbed Form">
+<meta property="og:title" content="Enter Payment Information" >
+<meta property="og:url" content="https://form.jotform.com/201355809508356" >
+<meta property="og:description" content="Please click the link to complete this form.">
+<meta name="slack-app-id" content="AHNMASS8M">
+<link rel="shortcut icon" href="https://cdn.jotfor.ms/favicon.ico">
+<link rel="canonical" href="https://form.jotform.com/201355809508356" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+<meta name="HandheldFriendly" content="true" />
+<title>Enter Payment Information</title>
+<link href="https://cdn.jotfor.ms/static/formCss.css?3.3.17794" rel="stylesheet" type="text/css" />
+<link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.17794" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.17794" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1"/>
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/styles.css?3.3.17794" />
 <style type="text/css">
     .form-label-left{
         width:150px;
@@ -111,7 +129,7 @@ echo '</style>';
     }
   
     .supernova .form-all, .form-all {
-      background-color: ;
+      background-color: #fff;
       border: 1px solid transparent;
     }
   
@@ -169,26 +187,8 @@ echo '</style>';
     margin-top: initial;
   }
   
-  /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
-    /* Injected CSS Code */
+ 
 </style>
-
-?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html class="supernova"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="alternate" type="application/json+oembed" href="https://www.jotform.com/oembed/?format=json&amp;url=https%3A%2F%2Fform.jotform.com%2F201355809508356" title="oEmbed Form">
-<link rel="alternate" type="text/xml+oembed" href="https://www.jotform.com/oembed/?format=xml&amp;url=https%3A%2F%2Fform.jotform.com%2F201355809508356" title="oEmbed Form">
-<meta property="og:title" content="Enter Payment Information" >
-<meta property="og:url" content="https://form.jotform.com/201355809508356" >
-<meta property="og:description" content="Please click the link to complete this form.">
-<meta name="slack-app-id" content="AHNMASS8M">
-<link rel="shortcut icon" href="https://cdn.jotfor.ms/favicon.ico">
-<link rel="canonical" href="https://form.jotform.com/201355809508356" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
-<meta name="HandheldFriendly" content="true" />
-<title>Enter Payment Information</title>
-
 
 <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
 <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.17794" type="text/javascript"></script>
@@ -465,17 +465,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"enterPayment","qid":"1","text":"Ent
   <script type="text/javascript">
   document.getElementById("si" + "mple" + "_spc").value = "201355809508356-201355809508356";
   </script>
-  <div class="formFooter-heightMask">
-  </div>
-  <div class="formFooter f6">
-    <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=201355809508356&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="Jotform Logo" style="height: 44px;"></a>
-    <div class="formFooter-rightSide">
-      <span class="formFooter-text">
-        Now create your own JotForm - It's free!
-      </span>
-      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=201355809508356&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own JotForm</a>
-    </div>
-  </div>
+  
 </form>
 		
 		

@@ -23,16 +23,22 @@
 		$R=$_REQUEST;							
 		if($R[parking_id])
 		{
+			#when user update parking
 			$statement = "UPDATE `parking` SET";
 			$cond = "WHERE `parking_id` = '$R[parking_id]'";
 			$msg = "Parking dealloted Successfully.";
+			
 		}
 		else
 		{
+			#insert into the parking table in database
 			$statement = "INSERT INTO `parking` SET";
 			$cond = "";
-			$msg="Parking Alloted Successfully.";
+			#$msg="Parking Alloted Successfully.";
+			 $msg= '<a href="payment.php">parking alloted successfully, please click here for payment process </a>';
+
 		}
+		
 		$SQL=   $statement." 
 			`parking_space_id` = '$R[parking_space_id]', 
 			`parking_slot_number` = '$R[parking_slot_number]', 
@@ -51,6 +57,10 @@
 			 $cond;
 		$rs = mysql_query($SQL) or die(mysql_error());
 		header("Location:../list-slots.php?msg=$msg&space_id=$R[parking_space_id]");
+		
+		 
+		
+			
 	}
 #########Function for delete parking##########3
 function delete_parking()
